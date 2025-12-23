@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Okuma Seyri</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="top">
+    <h1>Okuma Seyri</h1>
+    <p class="muted">
+      Kamera tabanlı okuma davranışı demo platformu (tanı koymaz).
+    </p>
+  </header>
+
+  <main class="grid">
+    <section class="card">
+      <h2>Okuma Metni</h2>
+      <div id="readingBox">
+        <p>
+          Bugün okulda yeni bir hikâye okuduk. Hikâyede küçük bir kedi,
+          kaybolan topunu arıyordu. Kedinin arkadaşı köpek ona yardım etti.
+        </p>
+        <p>
+          Sonra öğretmen, herkesin sırayla iki cümle okumasını istedi.
+          Bazı kelimeler uzundu ve dikkatli okumak gerekiyordu.
+        </p>
+      </div>
+
+      <div class="row">
+        <button id="btnStart" class="btn">Webcam’i Başlat</button>
+        <button id="btnCalib" class="btn secondary" disabled>Kalibrasyon</button>
+        <button id="btnReadStart" class="btn secondary" disabled>Okumayı Başlat</button>
+        <button id="btnReadStop" class="btn secondary" disabled>Okumayı Bitir</button>
+        <button id="btnDownload" class="btn secondary" disabled>JSON İndir</button>
+      </div>
+
+      <p class="warn">
+        ⚠️ Bu uygulama tanı koymaz. Sonuçlar yalnızca demo/ön değerlendirme amaçlıdır.
+      </p>
+    </section>
+
+    <aside class="card">
+      <h2>Durum & Metrikler</h2>
+      <div id="status" class="muted">Hazır.</div>
+      <hr />
+      <div><strong>Okuma Süresi:</strong> <span id="tRead">-</span></div>
+      <div><strong>Örnek Sayısı:</strong> <span id="nSamples">0</span></div>
+      <div><strong>Satır Değişimi:</strong> <span id="nLineChanges">0</span></div>
+      <div><strong>Satır Geri Dönüş:</strong> <span id="nLineBack">0</span></div>
+      <div><strong>Satır Atlama:</strong> <span id="nLineSkip">0</span></div>
+      <hr />
+      <h3>Son 5 Örnek</h3>
+      <pre id="last5" class="muted"></pre>
+    </aside>
+  </main>
+
+  <div id="dot"></div>
+  <div id="calibOverlay"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/webgazer@2.1.0/webgazer.min.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
